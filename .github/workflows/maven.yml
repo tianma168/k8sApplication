@@ -35,3 +35,10 @@ jobs:
         docker push registry.cn-hangzhou.aliyuncs.com/arlandingzone/landingzone-k8s:${{ github.sha }}
         docker images
         cat kubernetes/deploy.yaml | sed -e "s/\${version}/${{ github.sha }}/" > kubernetes/tmp.yaml
+    - name: test kubectl
+          uses: steebchen/kubectl@master
+          env:
+            KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA }}
+          with:
+            args: apply -f kubernetes/tmp.yaml
+    #        args: get pods
