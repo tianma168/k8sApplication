@@ -36,7 +36,7 @@ jobs:
         docker images
         cat kubernetes/deploy.yaml | sed -e "s/\${version}/${{ github.sha }}/" > kubernetes/tmp.yaml
     - name: test kubectl
-      uses: steebchen/kubectl@master
+      uses: steebchen/kubectl@main
       env:
         KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA }}
       with:
