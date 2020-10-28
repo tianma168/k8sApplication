@@ -1,0 +1,20 @@
+apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
+kind: Deployment
+metadata:
+  name: hellojava-deployment
+spec:
+  selector:
+    matchLabels:
+      app: hellojava
+  replicas: 3 # tells deployment to run 2 pods matching the template
+  template:
+    metadata:
+      labels:
+        app: hellojava
+    spec:
+      containers:
+      - name: hellojava
+        image: registry-vpc.cn-hangzhou.aliyuncs.com/arlandingzone/landingzone:${version} # use sed replace
+        ports:
+        - containerPort: 80
+        - containerPort: 8080
