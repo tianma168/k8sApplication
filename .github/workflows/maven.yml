@@ -32,6 +32,6 @@ jobs:
     - name: Docker build&push
       run: |
         docker build . -t registry-vpc.cn-hangzhou.aliyuncs.com/arlandingzone/landingzone:${{ github.sha }}
-        docker push registry-vpc.cn-hangzhou.aliyuncs.com/arlandingzone/landingzone${{ github.sha }}
+        docker push registry-vpc.cn-hangzhou.aliyuncs.com/arlandingzone/landingzone:${{ github.sha }}
         docker images
         cat kubernetes/deploy.yaml | sed -e "s/\${version}/${{ github.sha }}/" > kubernetes/tmp.yaml
