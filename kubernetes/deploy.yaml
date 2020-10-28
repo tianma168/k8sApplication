@@ -13,7 +13,7 @@ spec:
         app: arapptest
     spec:
       containers:
-      - name: hellojava
+      - name: arapptest
         image: registry.cn-hangzhou.aliyuncs.com/arlandingzone/landingzone-k8s:${version} # use sed replace
         ports:
         - containerPort: 80
