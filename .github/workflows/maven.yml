@@ -28,7 +28,7 @@ jobs:
       with:
         registry: registry.cn-hangzhou.aliyuncs.com
         username: ${{ secrets.aliyun_username }}
-        password: ${{ secrets.aliyun_key }}
+        password: ${{ secrets.aliyun_pwd }}
     - name: Docker build&push
       run: |
         docker build . -t registry-vpc.cn-hangzhou.aliyuncs.com/arlandingzone/landingzone:${{ github.sha }}
