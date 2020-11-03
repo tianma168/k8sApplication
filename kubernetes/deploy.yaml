@@ -6,7 +6,7 @@ spec:
   selector:
     matchLabels:
       app: rrrrrr
-  replicas: 2 # tells deployment to run 2 pods matching the template
+  replicas: 3 # tells deployment to run 2 pods matching the template
   template:
     metadata:
       labels:
@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: rrrrrr
-        image: registry-vpc.cn-hangzhou.aliyuncs.com/arlandingzone/landingzone-k8s:${version} # use sed replace
+        image: registry-vpc.cn-shanghai.aliyuncs.com/ar_ck/k8s_app:${version} # use sed replace
         ports:
         - containerPort: 80
         - containerPort: 8080
