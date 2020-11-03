@@ -32,7 +32,7 @@ jobs:
     - name: Docker build&push
       run: |
         docker build . -t registry.cn-shanghai.aliyuncs.com/ar_ck/k8s_app:${{ github.sha }}
-        docker push registry-vpc.cn-shanghai.aliyuncs.com/ar_ck/k8s_app:${{ github.sha }}
+        docker push registry.cn-shanghai.aliyuncs.com/ar_ck/k8s_app:${{ github.sha }}
         docker images
         cat kubernetes/deploy.yaml | sed -e "s/\${version}/${{ github.sha }}/" > kubernetes/tmp.yaml
     - name: test kubectl
