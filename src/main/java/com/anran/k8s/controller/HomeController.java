@@ -20,6 +20,8 @@ public class HomeController {
 
     public static final String lineBreak = "\n";
 
+
+
     @RequestMapping("/system")
     public void system(HttpServletRequest request, HttpServletResponse response) {
         try {
@@ -53,7 +55,7 @@ public class HomeController {
 
     @GetMapping("/k8sDemo")
     public String test() {
-        return "this is first k8s Demo";
+        return "hello ha k8s Demo";
     }
 
 }
