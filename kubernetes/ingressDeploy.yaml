@@ -1,0 +1,18 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    nginx.ingress.kubernetes.io/service-weight: ''
+  generation: 1
+  name: aringress
+spec:
+  rules:
+    - host: foo.bar.com
+      http:
+        paths:
+          - backend:
+              serviceName: arpod-svc
+              servicePort: 8080
+            path: /
+status:
+  loadBalancer: {}
