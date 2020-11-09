@@ -39,17 +39,8 @@ jobs:
       uses: steebchen/kubectl@master
       env:
         KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA }}
-      with:
-        args: apply -f kubernetes/tmp.yaml
-    - name: deploy service for kubectl
-      uses: steebchen/kubectl@master
-      env:
-        KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA }}
-      with:
-        args: apply -f kubernetes/serviceDeploy.yaml
-    - name: deploy ingress for kubectl
-      uses: steebchen/kubectl@master
-      env:
-        KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA }}
-      with:
-        args: apply -f kubernetes/ingressDeploy.yaml
+      run: |
+        kubectl apply -f kubernetes/tmp.yaml
+        kubectl apply -f kubernetes/serviceDeploy.yaml
+        kubectl apply -f kubernetes/ingressDeploy.yaml
+
