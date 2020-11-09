@@ -2,6 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: arpod-svc2
+  namespace: dev
 spec:
   ports:
     - name: portmap

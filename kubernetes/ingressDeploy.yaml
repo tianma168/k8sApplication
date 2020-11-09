@@ -5,6 +5,7 @@ metadata:
     nginx.ingress.kubernetes.io/service-weight: ''
   generation: 1
   name: aringress
+  namespace: dev
 spec:
   rules:
     - host: foo.bar.com

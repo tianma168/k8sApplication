@@ -34,7 +34,14 @@ jobs:
         docker build . -t registry.cn-shanghai.aliyuncs.com/ar_ck/k8s_app:${{ github.sha }}
         docker push registry.cn-shanghai.aliyuncs.com/ar_ck/k8s_app:${{ github.sha }}
         docker images
-        cat kubernetes/deploy.yaml | sed -e "s/\${version}/${{ github.sha }}/" > kubernetes/tmp.yaml
+        cat kubernetes/podDeploy.yaml | sed -e "s/\${version}/${{ github.sha }}/" > kubernetes/tmp.yaml
+    - name: deploy to nonprod env
+      uses: steebchen/kubectl@master
+      env:
+        KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA }}
+      with:
+        args:
+         create -f kubernetes/namespace/nonprodNamespace.yaml
     - name: deploy pod for kubectl
       uses: steebchen/kubectl@master
       env:
