@@ -47,7 +47,7 @@ jobs:
         KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA }}
       with:
         args: apply -f kubernetes/serviceDeploy.yaml
-    - name: deploy service for kubectl
+    - name: deploy ingress for kubectl
       uses: steebchen/kubectl@master
       env:
         KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA }}

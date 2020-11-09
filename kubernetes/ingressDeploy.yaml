@@ -11,7 +11,7 @@ spec:
       http:
         paths:
           - backend:
-              serviceName: arpod-svc
+              serviceName: arpod-svc2
               servicePort: 8080
             path: /
 status:
