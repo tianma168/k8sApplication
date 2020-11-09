@@ -37,7 +37,6 @@ public class HomeController {
             sb.append("-----------------------------------------------------------------------------");
             sb.append(lineBreak);
             sb.append(lineBreak);
-
             Properties props = System.getProperties();
             Set<Object> keys = props.keySet();
             for (Object key : keys) {
@@ -54,8 +53,13 @@ public class HomeController {
     }
 
     @GetMapping("/k8sDemo")
-    public String test() {
-        return "hello ha k8s Demo";
+    public String k8sDemo() {
+        return "hello k8s Demo";
+    }
+
+    @GetMapping("/k8sDemo2")
+    public String k8sDemo2() {
+        return "hello spring, welcome to  k8s!";
     }
 
 }
