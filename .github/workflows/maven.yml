@@ -39,8 +39,9 @@ jobs:
       uses: steebchen/kubectl@master
       env:
         KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA }}
-      run: |
-        kubectl apply -f kubernetes/tmp.yaml
-        kubectl apply -f kubernetes/serviceDeploy.yaml
-        kubectl apply -f kubernetes/ingressDeploy.yaml
+      with:
+        args:
+         apply -f kubernetes/tmp.yaml
+         apply -f kubernetes/serviceDeploy.yaml
+         apply -f kubernetes/ingressDeploy.yaml
 
