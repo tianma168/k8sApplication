@@ -5,15 +5,15 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: anran-deployment
+      app: anrandeployment
   replicas: 2 # tells deployment to run 2 pods matching the template
   template:
     metadata:
       labels:
-        app: anran-deployment
+        app: anrandeployment
     spec:
       containers:
-      - name: anran-deployment
+      - name: anrandeployment
         image: registry-vpc.cn-shanghai.aliyuncs.com/ar_ck/k8s_app:${version} # use sed replace
         ports:
         - containerPort: 80
