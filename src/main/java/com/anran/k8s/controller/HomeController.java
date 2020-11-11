@@ -1,6 +1,5 @@
 package com.anran.k8s.controller;
 
-
 import com.anran.k8s.util.LocalInfoUtils;
 import org.springframework.web.bind.annotation.*;
 
@@ -19,8 +18,6 @@ import java.util.Set;
 public class HomeController {
 
     public static final String lineBreak = "\n";
-
-
 
     @RequestMapping("/system")
     public void system(HttpServletRequest request, HttpServletResponse response) {
@@ -54,12 +51,6 @@ public class HomeController {
 
     @GetMapping("/k8sDemo")
     public String k8sDemo() {
-        return "大家好，欢迎大家来到k8s";
+        return "hello, welcome to  k8s!";
     }
-
-    @GetMapping("/k8sDemo2")
-    public String k8sDemo2() {
-        return "hello spring, welcome to  k8s!";
-    }
-
 }
