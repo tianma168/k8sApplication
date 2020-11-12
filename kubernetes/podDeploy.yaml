@@ -1,20 +1,20 @@
 apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
 kind: Deployment
 metadata:
-  name: anranpod2
-  namespace: dev
+  name: anranpod
+  namespace: prod
 spec:
   selector:
     matchLabels:
-      app: anranpod2
+      app: anranpod
   replicas: 2 # tells deployment to run 2 pods matching the template
   template:
     metadata:
       labels:
-        app: anranpod2
+        app: anranpod
     spec:
       containers:
-      - name: anranpod2
+      - name: anranpod
         image: registry-vpc.cn-shanghai.aliyuncs.com/ar_ck/k8sapp:${version} # use sed replace
         ports:
         - containerPort: 80

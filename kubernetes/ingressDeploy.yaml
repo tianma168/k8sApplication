@@ -5,14 +5,14 @@ metadata:
     nginx.ingress.kubernetes.io/service-weight: ''
   generation: 1
   name: aringress
-  namespace: dev
+  namespace: prod
 spec:
   rules:
     - host: foo.bar.com
       http:
         paths:
           - backend:
-              serviceName: arpod-svc2
+              serviceName: arpod-svc
               servicePort: 8080
             path: /
 status:
