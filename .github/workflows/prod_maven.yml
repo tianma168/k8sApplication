@@ -31,8 +31,8 @@ jobs:
         password: ${{ secrets.aliyun_pwd }}
     - name: Docker build&push
       run: |
-        docker build . -t registry.cn-shanghai.aliyuncs.com/ar_ck5/k8sapp5:${{ github.sha }}
-        docker push registry.cn-shanghai.aliyuncs.com/ar_ck5/k8sapp5:${{ github.sha }}
+        docker build . -t registry.cn-shanghai.aliyuncs.com/ar_ck3/k8sapp3:${{ github.sha }}
+        docker push registry.cn-shanghai.aliyuncs.com/ar_ck3/k8sapp3:${{ github.sha }}
         docker images
         cat kubernetes/podDeploy.yaml | sed -e "s/\${version}/${{ github.sha }}/" > kubernetes/tmp.yaml
     - name: deploy to prod env
