@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: anranpod
-        image: registry-vpc.cn-shanghai.aliyuncs.com/ar_ck8/k8sapp8:${version} # use sed replace
+        image: registry-vpc.cn-shanghai.aliyuncs.com/ar_ck9/k8sapp9:${version} # use sed replace
         ports:
         - containerPort: 80
         - containerPort: 8080
