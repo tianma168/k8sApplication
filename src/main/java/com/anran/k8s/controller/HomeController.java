@@ -51,6 +51,6 @@ public class HomeController {
 
     @GetMapping("/k8sDemo")
     public String k8sDemo() {
-        return "hello hi, welcome to  k8s!";
+        return "hello, welcome to  k8s!";
     }
 }
